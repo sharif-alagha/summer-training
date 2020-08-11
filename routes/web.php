@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('customers', 'CustomerController@index')->name('customers');
+
+Route::post('add_customer', 'CustomerController@addCustomer')->name('add_customer');
